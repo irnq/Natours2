@@ -39,16 +39,25 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
-  background-image: linear-gradient(to right,
-                   ($color-primary-light),
-                   ($color-primary-dark));
+  // background-image: linear-gradient(to right,
+                  //  ($color-primary-light),
+                  //  ($color-primary-dark));
   
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  // -webkit-background-clip: text;
+  // background-clip: text;
+  // color: transparent;
+  color: $color-primary;
   letter-spacing: 2px;
   transition: all .2s;
- 
+
+  @supports (-webkit-background-clip: text)  {
+    color: transparent;
+    background-image: linear-gradient(to right,
+                   ($color-primary-light),
+                   ($color-primary-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
   
   
 

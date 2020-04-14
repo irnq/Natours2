@@ -1,8 +1,9 @@
 .section-about{
   background-color: $color-gray-light-1;
   margin-top: -20vh;
-  padding-top: 30vh;
-  padding-bottom: 60vh;
+  padding: 25rem 0;
+  // padding-top: 30vh;
+  // padding-bottom: 60vh;
 
   @supports not (display: grid){
 
@@ -43,12 +44,31 @@
   background-position: center;
   background-size:cover;
 
-  padding: 10rem 2rem;
+  padding: 20rem 0;
   
+  margin-top: -11rem;
+
   // @include content-grid(4);
+
+  transform: skewY(-7deg);
+
+  & > *{
+    transform: skewY(7deg);
+  }
   
-  &__card{
-    background-color:rgba($color-white,0.8);
+}
+
+.section-tours{
+  background-color: $color-gray-light-1;
+  margin-top: -20vh;
+  padding: 25rem 0 15rem 0;
+
+  &__button{
+    margin-top: 8rem;
   }
 }
 
+.section-stories{
+  padding: 15rem 0 60rem 0;
+  background-color: $color-gray-light-1;
+}
