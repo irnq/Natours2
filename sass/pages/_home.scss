@@ -1,0 +1,49 @@
+.section-about{
+  background-color: $color-gray-light-1;
+  margin-top: -20vh;
+  padding-top: 30vh;
+  padding-bottom: 60vh;
+
+  @include content-grid(2);
+
+  // &__content{
+  //   max-width: 120rem;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   margin: 0 auto;
+    
+  // }
+
+  // %section-about-content{
+  //   width: 49%;
+    
+  // }
+
+  // &__text-block{
+  //   @extend %section-about-content;
+    
+  // }
+  // &__img-block{
+  //   @extend %section-about-content;
+
+  // }
+}
+
+.feauters{
+  display: grid;
+  background-image:  linear-gradient(to right bottom, 
+                rgba($color-primary-light,0.8),
+                rgba($color-primary-dark, 0.8)),
+                url("../img/nat-4.jpg");
+  background-position: center;
+  background-size:cover;
+
+  padding: 10rem 2rem;
+  
+  @include content-grid(4);
+  
+  &__card{
+    background-color:rgba($color-white,0.8);
+  }
+}
+

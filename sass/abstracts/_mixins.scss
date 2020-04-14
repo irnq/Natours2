@@ -1,0 +1,25 @@
+@mixin clearfix {
+  &::after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+}
+
+@mixin content-grid($col){
+  
+
+  &__content{
+    $gap-col:3rem;
+    $gap-row:2rem;
+
+    max-width: 120rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, calc((100% - #{$gap-col} * (#{$col}-1) ) / #{$col}));
+    grid-column-gap: $gap-col;
+    grid-row-gap: $gap-row;
+    justify-content: center;
+    margin: 0 auto;
+
+  }
+}
