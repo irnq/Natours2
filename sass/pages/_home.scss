@@ -4,7 +4,12 @@
   padding-top: 30vh;
   padding-bottom: 60vh;
 
-  @include content-grid(2);
+  @supports not (display: grid){
+
+  }
+
+  // @include content-grid(2);
+
 
   // &__content{
   //   max-width: 120rem;
@@ -30,7 +35,7 @@
 }
 
 .feauters{
-  display: grid;
+ 
   background-image:  linear-gradient(to right bottom, 
                 rgba($color-primary-light,0.8),
                 rgba($color-primary-dark, 0.8)),
@@ -40,7 +45,7 @@
 
   padding: 10rem 2rem;
   
-  @include content-grid(4);
+  // @include content-grid(4);
   
   &__card{
     background-color:rgba($color-white,0.8);

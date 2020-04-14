@@ -387,6 +387,53 @@ body {
   text-align: center;
 }
 
+.row {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row [class^="col-"] {
+  float: left;
+}
+
+.row [class^="col-"]:not(:last-child) {
+  margin-right: 3rem;
+}
+
+.row .col-1-of-2 {
+  width: calc((100% - 3rem) / 2);
+}
+
+.row .col-1-of-3 {
+  width: calc((100% - 2 * 3rem) / 3);
+}
+
+.row .col-2-of-3 {
+  width: calc(2 * ((100% - 2 * 3rem) / 3) + 3rem);
+}
+
+.row .col-1-of-4 {
+  width: calc((100% - 3 * 3rem) / 4);
+}
+
+.row .col-2-of-4 {
+  width: calc(2 * ((100% - 3 * 3rem) / 4) + 3rem);
+}
+
+.row .col-3-of-4 {
+  width: calc(3 * ((100% - 3 * 3rem) / 4) + 2 * 3rem);
+}
+
 .section-about {
   background-color: #f7f7f7f7;
   margin-top: -20vh;
@@ -394,23 +441,7 @@ body {
   padding-bottom: 60vh;
 }
 
-.section-about__content {
-  max-width: 120rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (calc((100% - 3rem * (2-1) ) / 2))[auto-fit];
-      grid-template-columns: repeat(auto-fit, calc((100% - 3rem * (2-1) ) / 2));
-  grid-column-gap: 3rem;
-  grid-row-gap: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0 auto;
-}
-
 .feauters {
-  display: -ms-grid;
-  display: grid;
   background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(126, 213, 111, 0.8)), to(rgba(40, 180, 133, 0.8))), url("../img/nat-4.jpg");
   background-image: -webkit-linear-gradient(left top, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
   background-image: -o-linear-gradient(left top, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
@@ -418,20 +449,6 @@ body {
   background-position: center;
   background-size: cover;
   padding: 10rem 2rem;
-}
-
-.feauters__content {
-  max-width: 120rem;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (calc((100% - 3rem * (4-1) ) / 4))[auto-fit];
-      grid-template-columns: repeat(auto-fit, calc((100% - 3rem * (4-1) ) / 4));
-  grid-column-gap: 3rem;
-  grid-row-gap: 2rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0 auto;
 }
 
 .feauters__card {
