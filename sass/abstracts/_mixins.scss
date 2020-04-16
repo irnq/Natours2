@@ -22,3 +22,42 @@
 
   }
 }
+
+
+
+
+//   MEDIA QUERIES
+
+@mixin respond-600{
+  @media only screen and (max-width:60rem) { @content };
+}
+//breakpoint arguments:
+$device-phone: 37.5em;  //600px/16pxfont
+$device-tab-port: 56.25em;   //900
+$device-tab-land: 75rem;     //1200
+$device-laptop: 85.375em;   //1366
+$device-big-screen: 112.5rem;  //1800
+
+//ORDER:  _base + _typography > general layout + grid > page layout > components 
+
+@mixin respond($breakpoints){
+  @if $breakpoints == phone {
+    @media only screen and (max-width:$device-phone) { @content };
+  }
+
+  @if $breakpoints == tab-port {
+    @media only screen and (max-width:$device-tab-port) { @content };
+  }
+
+  @if $breakpoints == tab-land {
+    @media only screen and (max-width:$device-tab-land) { @content };
+  }
+
+  @if $breakpoints == laptop {
+    @media only screen and (max-width:$device-laptop) { @content };
+  }
+
+  @if $breakpoints == big-screen {
+    @media only screen and (min-width:$device-big-screen) { @content };
+  }
+}

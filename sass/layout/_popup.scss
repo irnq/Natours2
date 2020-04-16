@@ -63,7 +63,21 @@
     opacity: 0;
     transition: all .3s .2s;
     
-
+    @include respond(laptop){
+      display: block;
+      width: 75%;
+      height: 60%;
+    }
+    @include respond(tab-port){
+      
+      width: 80%;
+      height: 49%;
+    }
+    @include respond(phone){
+      display: block;
+      width: 90%;
+      height: auto;
+    }
   }
 
   &__left{
@@ -71,7 +85,14 @@
     
     display: table-cell;
     vertical-align: middle;
-
+    @include respond(laptop){
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+    }
   }
   &__right{
     background-color: $color-white;
@@ -80,13 +101,35 @@
     vertical-align: middle;
     padding: 3rem 5rem;
 
+    @include respond(laptop){
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba($color-white,.7);
+      height: 100%;
+    }
+    @include respond(phone){
+      background-color: rgba($color-white,.98);
+      position: relative;
+    }
 
   }
 
   &__img{
     display: block;
     width: 100%;
- 
+    @include respond(laptop){
+      display: block;
+      width: cover;
+     
+    }
+
+    @include respond(phone){
+      display: none;
+    }
+    
   
   }
 
@@ -100,6 +143,14 @@
 
     hyphens: auto;
     
+    @include respond(tab-port){
+      margin-bottom: 1rem;
+    }
+
+    @include respond(phone){
+     column-count: 1;
+      
+    }
     
   }
 
